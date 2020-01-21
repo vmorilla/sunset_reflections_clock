@@ -13,7 +13,7 @@ import 'basic3d/mesh_registry.dart';
 import 'basic3d/scene3d.dart';
 import 'basic3d/textures.dart';
 import 'assets.dart';
-import 'flutter_clock_helper/model.dart';
+import 'package:flutter_clock_helper/model.dart';
 import 'themes.dart';
 import 'basic3d/uvmappers.dart';
 

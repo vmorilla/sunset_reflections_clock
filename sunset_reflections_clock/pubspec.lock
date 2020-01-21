@@ -97,6 +97,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_clock_helper:
+    dependency: "direct main"
+    description:
+      path: "../flutter_clock_helper"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   flutter_suncalc:
     dependency: "direct main"
     description:

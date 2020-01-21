@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../basic3d/clip_coordinates.dart';
 import '../time_notifier.dart';
-import '../flutter_clock_helper/model.dart';
+import 'package:flutter_clock_helper/model.dart';
 import '../main_model.dart';
 import '../basic3d/extensions.dart';
 

@@ -2,7 +2,7 @@ import 'dart:math' show Random, min;
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' show Aabb2;
-import '../flutter_clock_helper/model.dart';
+import 'package:flutter_clock_helper/model.dart';
 import '../main_model.dart';
 import '../basic3d/camera_body.dart';
 import '../basic3d/path3d.dart';

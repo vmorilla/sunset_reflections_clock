@@ -4,11 +4,11 @@
 
 import 'dart:io';
 
-import 'flutter_clock_helper/customizer.dart';
-import 'flutter_clock_helper/model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_clock_helper/model.dart';
+import 'package:flutter_clock_helper/customizer.dart';
 import 'helpers/sight_tester.dart';
 import 'main_model.dart';
 import 'themes.dart';
@@ -16,6 +16,7 @@ import 'time_notifier.dart';
 import 'clock_parts/clock.dart';
 
 const timesFaster = 1;
+const testMode = false;
 
 void main() {
   // A temporary measure until Platform supports web and TargetPlatform supports
@@ -53,7 +54,7 @@ class VacuumClockApp extends StatelessWidget {
             builder: (context, props) => ChangeNotifierProvider(
                 create: (context) =>
                     TimeNotifier(DateTime.now(), timesFaster: timesFaster),
-                child: App(testMode: props.model.testMode))));
+                child: App(testMode: testMode))));
   }
 }
 
