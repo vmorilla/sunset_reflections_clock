@@ -1,0 +1,18 @@
+{
+    "name": "Mirador de San Nicolas in Granada",
+    "description": "The most iconic viewpoint in Granada (Spain), which offers its visitors a fantastic view to the two most emblematic symbols of this beautiful town: the Alhambra, a wonderful muslim castle, and the Veleta, the second highest peak in the mountain range of Sierra Nevada. It offers a complete view of the Alhambra, the Sierra Nevada and the city of Granada. Former U.S. President Bill Clinton once coined it “the most breathtaking sunset in the world",
+    "gps": {
+        "lat": 37.181281,
+        "lon": -3.592456
+    },
+    "pictures": {
+        "night": "night.webp",
+        "day": "day.webp"
+    },
+    "ecliptic": {
+        "zenith": 0.1,
+        "horizon": 0.77,
+        "east": 0.01,
+        "west": 0.99
+    }
+}

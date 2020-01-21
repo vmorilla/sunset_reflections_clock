@@ -1,0 +1,29 @@
+name: sunset_reflections_clock
+description: Cold cathode clock with a view
+version: 1.0.0+1
+
+environment:
+    sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+    flutter:
+        sdk: flutter
+    cupertino_icons: ^0.1.2
+    intl: ^0.16.1
+    provider: ^3.2.0
+    path_drawing: ^0.4.1
+    flutter_suncalc: ^0.1.0
+    xml: ^3.5.0
+
+dev_dependencies:
+    flutter_test:
+        sdk: flutter
+    test: ^1.9.4
+
+flutter:
+    uses-material-design: true
+    assets:
+        - assets/3d/
+        - assets/textures/
+        - assets/digits.svg
+        - assets/sights/san_nicolas/
