@@ -47,11 +47,10 @@ The phase of the moon is computed and displayed as well:
 ![a sunrise](docs/sunrise.png)
 ![a crescent moon](docs/crescent_moon.png)
 
-I have included a **test mode** that splits the screen into two columns and enables going back and forth in time using swipes. _This feature has been included merely to show the operation of the clock. I'm aware is not be considered in the evaluation of the work presented._
+I have included a **test mode** that splits the screen into two columns and enables going back and forth in time using swipes. _This feature has been included merely to show the operation of the clock. I'm aware is not be considered in the evaluation of the work presented._ To use it, just modify the value of the boolean constant `testMode` in [lib/main.dart](lib/main.dart)
 
-![test mode](docs/test_mode.png)
 
-In addition to this, the class [ChangeNotifierProvider](lib/time_notifier.dart), which takes care of notifying widgets to be updated, includes an optional parameter to make time run faster. During the tests I used to have the time running 1 minute every second. For this, just change the value of the constant `timesFaster` in the file (libs/main.dart).
+In addition to this, the class [ChangeNotifierProvider](lib/time_notifier.dart), which takes care of notifying widgets of time changes, includes an optional parameter to make time run faster. During the tests I used to have the time running 1 minute every second. For this, just change the value of the constant `timesFaster` in the file (libs/main.dart).
 
 I did not consider the possibility of using the geo-position of the clock itself, since it seems that Lenovo Smart Clock does not have a GPS included and network calls were not allowed according to rules.
 
