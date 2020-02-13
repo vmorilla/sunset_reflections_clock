@@ -14,7 +14,7 @@ The material used in the making of this clock is a bit dated. For this reason, d
 
 The glass tube shows a subtle reflection (though the application is prepared to change its intensity) of a window to the [Mirador de San Nicolas](https://www.google.com/maps/place/Calle+Mirador+de+San+Nicol%C3%A1s,+18010+Granada/@37.1810461,-3.5924338,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPlkwj821uUKclf2Sjs_RYrPY6mqYQlN7wSSHdB!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPlkwj821uUKclf2Sjs_RYrPY6mqYQlN7wSSHdB%3Dw203-h135-k-no!7i3613!8i2418!4m5!3m4!1s0xd71fcc7c961238b:0xe0cb79755e1ffe96!8m2!3d37.1812123!4d-3.5924667). This is one of the most iconic viewpoints in Granada (Spain), which offers its visitors a fantastic view to the two most emblematic symbols of this beautiful town: the Alhambra, a wonderful muslim castle, and the Veleta, the second highest peak in the mountain range of Sierra Nevada. It offers a complete view of the Alhambra, the Sierra Nevada and the city of Granada. Former U.S. President [Bill Clinton](https://en.wikipedia.org/wiki/Bill_Clinton) once coined it _“the most breathtaking sunset in the world"_.
 
-![Mirador de San Nicolás](assets/day.jpg)
+![Mirador de San Nicolás](sunset_reflections_clock/assets/day.jpg)
 
 ## Features
 
