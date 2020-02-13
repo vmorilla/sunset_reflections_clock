@@ -103,7 +103,7 @@ All the source code and assets have been written by the author and are released 
 
 -   All the textures under [assets/textures](assets/textures) have been downloaded from the awesome [https://cc0textures.com/](https://cc0textures.com/) and are licensed under the [Creative Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en) license.
 
--   The code under [lib/flutter_clock_helper](lib/flutter_clock_helper), which are the two helper classes provided for the contest with a minor modification to show the test mode.
+-   The code under [flutter_clock_helper](flutter_clock_helper/), which are the two helper classes provided for the contest with a minor modification to show the test mode.
 
 ## Future improvements
 
