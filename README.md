@@ -6,7 +6,7 @@ A cold cathode display clock with a subtle reflection of a beautiful view in Spa
 
 ## Description
 
-Sunset reflections is a face clock implemented for the [Flutter Clock Challenge](https://flutter.dev/clock) that emulates the behaviour of [cold cathode displays](https://en.wikipedia.org/wiki/Nixie_tube). These displays were a variant of neon lamps that resembled vacuum tubes and became popular between the sixties and the seventies. Shortly later they were superseded by LEDs and vacuum fluorescent displays. Recently, there is a new trend that has revived this kind of clocks and new models can be acquired at many popular online stores.
+*Sunset reflections* is a face clock implemented for the [Flutter Clock Challenge](https://flutter.dev/clock) that emulates the behaviour of [cold cathode displays](https://en.wikipedia.org/wiki/Nixie_tube). These displays were a variant of neon lamps that resembled vacuum tubes and became popular between the sixties and the seventies. Shortly later they were superseded by LEDs and vacuum fluorescent displays. Recently, there is a new trend that has revived this kind of clocks and new models can be acquired at many popular online stores.
 
 The clock face shows a perspective view that allows to observe the content of the tube displays: a set of stacked digits made with a thin tube filled with gas that glows when voltage is applied. The stacked digits are surrounded with a metallic hexagonal grid.
 
@@ -18,17 +18,17 @@ The glass tube shows a subtle reflection of a window to the [Mirador de San Nico
 
 ### 3D rendering
 
-One of the most challenging parts during the development of this clock was achieving a realistic representation of the glass tubes. Somehow, I ended up developing a basic 3D rendering engine, able to represent triangle meshes (the glass tube, the tube stand and the table) and canvas paths (the grid and the digits) according to the position of a virtual camera (see [basic3d](sunset_reflections_clock/lib/basic3d)).
+One of the most challenging parts during the development of this clock was achieving a realistic representation of the glass tubes. Somehow, I ended up developing a basic 3D rendering engine, able to represent triangle meshes (the glass tube, the tube stand and the table) and canvas paths (the grid and the digits) according to the position of a virtual camera (see [lib/basic3d](sunset_reflections_clock/lib/basic3d)).
 
-Triangle meshes have been created with openScad (see [docs/tube.scad](docs/tube.scad) and exported to [STL format](https://en.wikipedia.org/wiki/STL) (see [assets/3d](sunset_reflections_clock/assets/3d)). A binary STL parser has been implemented.
+Triangle meshes have been created with openScad (see [docs/tube.scad](docs/tube.scad)) and exported to [STL format](https://en.wikipedia.org/wiki/STL_(file_format)) (see [assets/3d](sunset_reflections_clock/assets/3d)). A binary STL parser has been implemented.
 
 Paths have been created programmatically (in the case of the grid) or with the help of [inkScape](https://en.wikipedia.org/wiki/Inkscape) and exported to [SVG format](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) (in the case of digits). A very basic SVG parser has been implemented with the help of [path_drawing](https://pub.dev/packages/path_drawing).
 
-A lot of maths and headaches are included: calculations of the impact of the light on objects ([textures.dart](sunset_reflections_clock/lib/basic3d/textures.dart)), mapping to image textures ([uvmappers.dart](sunset_reflections_clock/lib/basic3d/uvmappers.dart)) or translation from clip coordinates to canvas coordinates ([clip_coordinates.dart](sunset_reflections_clock/lib/basic3d/clip_coordinates.dart)).
+The project took a lot of maths and headaches: calculations of the impact of the light on objects ([textures.dart](sunset_reflections_clock/lib/basic3d/textures.dart)), mapping to image textures ([uvmappers.dart](sunset_reflections_clock/lib/basic3d/uvmappers.dart)) or translation from clip coordinates to canvas coordinates ([clip_coordinates.dart](sunset_reflections_clock/lib/basic3d/clip_coordinates.dart)).
 
 ### Light and dark themes
 
-The clock includes both light and dark themes. In fact, it is prepared to include multiple themes where different settings might be changed with little effort (see [libs/themes.dart](sunset_reflections_clock/libs/themes.dart)).
+The clock includes both light and dark themes. In fact, it is prepared to include multiple themes where different settings might be changed with little effort (see [lib/themes.dart](sunset_reflections_clock/lib/themes.dart)).
 
 -   The light theme is more colourful and shows a clock whose digits have Google-ish colors on a light wood table.
 -   The dark theme is a more old-fashioned style with more realistic colors for the digits on the top of a dark wood table.
@@ -37,13 +37,14 @@ The clock includes both light and dark themes. In fact, it is prepared to includ
 
 ### The sun and the moon
 
-The sun and the moon appear in the reflection depending on the time and day. I've chosen to paint them using unrealistic big proportions for a more artistic effect, but their positions are indeed computed according to their real locations in real time at the place where the pictures were taken. This is done with the help of [flutter_suncalc](https://pub.dev/packages/flutter_suncalc). The [celestial coordinates](https://en.wikipedia.org/wiki/Celestial_coordinate_system) are then mapped to the picture provided a reference line of the horizon, the azimuth and the east and west of the [ecliptic](https://en.wikipedia.org/wiki/Ecliptic). This information is included in a json asset file (see [desc.json](assets/sights/san_nicolas/desc.json)) in order to include other pictures in the future.
+The sun and the moon appear in the reflection depending on the time and day. I've chosen to paint them using unrealistic big proportions for a more artistic effect, but their positions are indeed computed according to their real locations in real time at the place where the pictures were taken. This is done with the help of [flutter_suncalc](https://pub.dev/packages/flutter_suncalc). The [celestial coordinates](https://en.wikipedia.org/wiki/Celestial_coordinate_system) are then mapped to the picture provided a reference line of the horizon, the azimuth and the east and west of the [ecliptic](https://en.wikipedia.org/wiki/Ecliptic). This information is included in a json asset file (see [desc.json](sunset_reflections_clock/assets/sights/san_nicolas/desc.json)) in order to include other pictures in the future.
 
 I did not consider the possibility of using the geo-position of the clock itself, since it seems that Lenovo Smart Clock does not have a GPS included and network calls were not allowed according to contest rules.
 
 ![a full moon](docs/full_moon.png)
 
-The phase of the moon is computed and displayed as well:
+The phase of the moon is computed and displayed as well. This is again possible thanks to [flutter_suncalc](https://pub.dev/packages/flutter_suncalc), a port of [suncalc](https://github.com/mourner/suncalc) to Dart:
+
 ![a sunrise](docs/sunrise.png)
 ![a crescent moon](docs/crescent_moon.png)
 
@@ -98,9 +99,9 @@ For sure! That was not hard.
 
 All the source code and assets have been written by the author and are released under the [APACHE 2.0 license](LICENSE) with the exception of:
 
--   The image of the moon ([full-moon.png](assets/sights/san_nicolas/full-moon.png)) is the fantastic picture by [Luc Viatour](https://Lucnix.be), downloaded from [https://commons.wikimedia.org/wiki/File:Lune_ico.png](https://commons.wikimedia.org/wiki/File:Lune_ico.png) and licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en) license. No modifications have been done to the original file.
+-   The image of the moon ([full-moon.png](assets/sights/san_nicolas/full-moon.png)) is the fantastic picture by [Luc Viatour](https://Lucnix.be), downloaded from [https://commons.wikimedia.org/wiki/File:Lune_ico.png](https://commons.wikimedia.org/wiki/File:Lune_ico.png) and is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en) license. No modifications have been done to the original file.
 
--   All the textures under [assets/textures](assets/textures) have been downloaded from the awesome [https://cc0textures.com/](https://cc0textures.com/) and licensed under the [Creative Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en) license.
+-   All the textures under [assets/textures](assets/textures) have been downloaded from the awesome [https://cc0textures.com/](https://cc0textures.com/) and are licensed under the [Creative Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en) license.
 
 -   The code under [lib/flutter_clock_helper](lib/flutter_clock_helper), which are the two helper classes provided for the contest with a minor modification to show the test mode.
 
