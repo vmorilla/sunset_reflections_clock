@@ -38,11 +38,11 @@ The clock includes both light and dark themes. In fact, it is prepared to includ
 
 The sun and the moon appear in the reflection depending on the time and day. I've chosen to paint them using unrealistic big proportions for a more artistic effect, but their positions are indeed computed according to their real locations in real time at the place where the pictures were taken. This is done with the help of [flutter_suncalc](https://pub.dev/packages/flutter_suncalc). The [celestial coordinates](https://en.wikipedia.org/wiki/Celestial_coordinate_system) are then mapped to the picture provided a reference line of the horizon, the azimuth and the east and west of the [ecliptic](https://en.wikipedia.org/wiki/Ecliptic). This information is included in a json asset file (see [desc.json](sunset_reflections_clock/assets/sights/san_nicolas/desc.json)) in order to include other pictures in the future.
 
-I did not consider the possibility of using the geo-position of the clock itself, since it seems that Lenovo Smart Clock does not have a GPS included and network calls were not allowed according to contest rules.
+I did not consider the possibility of using the geo-position of the clock itself, since it seems that Lenovo Smart Clocks do not have a GPS and network calls were not allowed according to contest rules.
 
 ![a full moon](docs/full_moon.png)
 
-The phase of the moon is computed and displayed as well. This is again possible thanks to [flutter_suncalc](https://pub.dev/packages/flutter_suncalc), a port of [suncalc](https://github.com/mourner/suncalc) to Dart:
+The phase of the moon is computed and displayed as well. This is again possible thanks to [flutter_suncalc](https://pub.dev/packages/flutter_suncalc), a port of [suncalc](https://github.com/mourner/suncalc) to Dart.
 
 ![a sunrise](docs/sunrise.png)
 ![a crescent moon](docs/crescent_moon.png)
@@ -79,7 +79,7 @@ The clock is prepared to enable some additional customizations (see [lib/themes.
 
 ### Performance
 
-This was challenging indeed! I've managed to keep GPU + UI time around 16/17-ish ms per frame (during the animation of the cathodes) with the exception of some puntual peaks. These peaks are caused by the refresh of the reflection image. For this reason, this action is delayed to happen a few seconds after a change of minute / hour. This way, it does not interfere with the animation.
+This was challenging indeed! I've managed to keep GPU + UI time around 16/17-ish ms per frame (during the animation of the cathodes turning on and off) with the exception of some puntual peaks. These peaks are caused by the refreshing of the reflection image. For this reason, this action is delayed to happen a few seconds after a change of minute / hour. This way, it does not interfere with the animation of the cathodes and everything runs smoothly.
 
 ![performance](docs/performance.png)
 
@@ -102,7 +102,7 @@ All the source code and assets have been written by the author and are released 
 
 -   All the textures under [assets/textures](assets/textures) have been downloaded from the awesome [https://cc0textures.com/](https://cc0textures.com/) and are licensed under the [Creative Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en) license.
 
--   The code under [flutter_clock_helper](flutter_clock_helper/), which are the two helper classes provided for the contest with a minor modification to show the test mode.
+-   The code under [flutter_clock_helper](flutter_clock_helper/), which are the two helper classes provided for the contest.
 
 
 ## Building instructions
@@ -121,4 +121,3 @@ This was my very first project using Flutter and Dart. It was a lot of fun but t
 -   Shadows and better lightning.
 -   UV Maps, reflection maps and some more advanced texture techniques could be implemented. Possibly adding the capability of importing some more advanced formats like [OBJ](https://en.wikipedia.org/wiki/Wavefront_.obj_file) so that the hard part of the rendering could be done in external tools like [Blender](<https://en.wikipedia.org/wiki/Blender_(software)>).
 -   Code cleaning and reorganization. Indeed, the code needs documentation and it could use a good reorganization. I have started the reengineering of the 3D engine but did not make it on time for the contest.
-
