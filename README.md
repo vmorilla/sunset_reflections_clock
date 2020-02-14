@@ -104,6 +104,14 @@ All the source code and assets have been written by the author and are released 
 
 -   The code under [flutter_clock_helper](flutter_clock_helper/), which are the two helper classes provided for the contest with a minor modification to show the test mode.
 
+
+## Building instructions
+```bash
+cd sunset_reflections_clock
+flutter create .
+flutter run
+```
+
 ## Future improvements
 
 This was my very first project using Flutter and Dart. It was a lot of fun but time flew faster than I expected. So, some of the initial ideas had to be discarded to deliver in time, but they could be added in a future:
@@ -113,3 +121,4 @@ This was my very first project using Flutter and Dart. It was a lot of fun but t
 -   Shadows and better lightning.
 -   UV Maps, reflection maps and some more advanced texture techniques could be implemented. Possibly adding the capability of importing some more advanced formats like [OBJ](https://en.wikipedia.org/wiki/Wavefront_.obj_file) so that the hard part of the rendering could be done in external tools like [Blender](<https://en.wikipedia.org/wiki/Blender_(software)>).
 -   Code cleaning and reorganization. Indeed, the code needs documentation and it could use a good reorganization. I have started the reengineering of the 3D engine but did not make it on time for the contest.
+
