@@ -15,7 +15,7 @@ import 'themes.dart';
 import 'time_notifier.dart';
 import 'clock_parts/clock.dart';
 
-const timesFaster = 1;
+const timesFaster = 30;
 const testMode = false;
 
 void main() {
@@ -54,7 +54,10 @@ class VacuumClockApp extends StatelessWidget {
             builder: (context, props) => ChangeNotifierProvider(
                 create: (context) =>
                     TimeNotifier(DateTime.now(), timesFaster: timesFaster),
-                child: App(testMode: testMode))));
+                child: Selector<ClockModel, bool>(
+                    selector: (_, model) =>
+                        model.weatherCondition == WeatherCondition.sunny,
+                    builder: (_, testMode, __) => App(testMode: testMode)))));
   }
 }
 

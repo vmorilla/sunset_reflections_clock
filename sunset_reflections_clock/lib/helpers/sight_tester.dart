@@ -22,20 +22,20 @@ class SightTester extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    color: Colors.black.withAlpha(100),
-                    child: Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(swipeLeftRightMessage(),
-                                style: instructionsStyle),
-                            Text(swipeUpDownMessage(),
-                                style: instructionsStyle),
-                          ]),
-                    ),
-                  ),
+                  // Container(
+                  //   color: Colors.black.withAlpha(100),
+                  //   child: Padding(
+                  //     padding: const EdgeInsets.all(4.0),
+                  //     child: Column(
+                  //         crossAxisAlignment: CrossAxisAlignment.start,
+                  //         children: [
+                  //           Text(swipeLeftRightMessage(),
+                  //               style: instructionsStyle),
+                  //           Text(swipeUpDownMessage(),
+                  //               style: instructionsStyle),
+                  //         ]),
+                  //   ),
+                  // ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(dateFormat.format(time), style: dateTimeStyle),
