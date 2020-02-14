@@ -102,7 +102,7 @@ All the source code and assets have been written by the author and are released 
 
 -   All the textures under [assets/textures](assets/textures) have been downloaded from the awesome [https://cc0textures.com/](https://cc0textures.com/) and are licensed under the [Creative Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en) license.
 
--   The code under [flutter_clock_helper](flutter_clock_helper/), which are the two helper classes provided for the contest.
+-   The code under [flutter_clock_helper](flutter_clock_helper/), which are the two helper classes provided for the contest by the Flutter team.
 
 
 ## Building instructions
@@ -121,3 +121,4 @@ This was my very first project using Flutter and Dart. It was a lot of fun but t
 -   Shadows and better lightning.
 -   UV Maps, reflection maps and some more advanced texture techniques could be implemented. Possibly adding the capability of importing some more advanced formats like [OBJ](https://en.wikipedia.org/wiki/Wavefront_.obj_file) so that the hard part of the rendering could be done in external tools like [Blender](<https://en.wikipedia.org/wiki/Blender_(software)>).
 -   Code cleaning and reorganization. Indeed, the code needs documentation and it could use a good reorganization. I have started the reengineering of the 3D engine but did not make it on time for the contest.
+-   A windows with a view : a friend of mine recenctly asked me to display the view as a window behind the clock. I wanted to keep the display simple so I wanted the reflection to be just a subtle detail, despite all the efforts invested in displaying the sun, the moon and light conditions. However, this might become an option in the future.
