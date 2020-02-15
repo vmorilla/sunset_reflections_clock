@@ -1,7 +1,7 @@
 # Sunset Reflections Clock
 A cold cathode display clock with a subtle reflection of a beautiful view in Spain: el Mirador de San Nicolás. The reflection shows the current position of the moon and the sun in the place where the picture was taken.
 
-![light theme](docs/light_theme.png)
+![long demo](docs/long.gif)
 
 ## Description
 
