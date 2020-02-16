@@ -48,7 +48,6 @@ I did not consider the possibility of using the geo-position of the clock itself
 The phase of the moon is computed and displayed as well. This is again possible thanks to [flutter_suncalc](https://pub.dev/packages/flutter_suncalc), a port of [suncalc](https://github.com/mourner/suncalc) to Dart.
 
 ![a sunrise](docs/sunrise.png)
-![a crescent moon](docs/crescent_moon.png)
 
 I have included a **test mode** that splits the screen into two parts showing the clock and the sight, and enables going back and forth in time using swipe gestures. _This feature has been included merely to show the operation of the clock. I'm aware it is something not to be considered in the evaluation of the work presented._ To use it, just modify the value of the boolean constant `testMode` in [lib/main.dart](sunset_reflections_clock/lib/main.dart).
 
