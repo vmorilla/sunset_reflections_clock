@@ -81,7 +81,7 @@ The clock is prepared to enable some additional customizations (see [lib/themes.
 -   ...
 
 
-The following picture shows an eccentric perspective and a very straight one for light and dark theme respectively:
+The following picture shows an eccentric perspective and a very straight one for light and dark themes respectively:
 ![Different perspectives](docs/perspectives.gif)
 
 ### Performance
