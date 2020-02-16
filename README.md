@@ -30,9 +30,12 @@ The project took a lot of maths and headaches: calculations of the impact of the
 The clock includes both light and dark themes. In fact, it is prepared to include multiple themes where different settings might be changed with little effort (see [lib/themes.dart](sunset_reflections_clock/lib/themes.dart)).
 
 -   The light theme is more colourful and shows a clock whose digits have Google-ish colors on a light wood table.
+
+![light theme](docs/light.gif)
+
 -   The dark theme is a more old-fashioned style with more realistic colors for the digits on the top of a dark wood table.
 
-![dark theme](docs/dark_theme.png)
+![dark theme](docs/dark.gif)
 
 ### The sun and the moon
 
