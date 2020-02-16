@@ -1,5 +1,5 @@
 # Sunset Reflections Clock
-A cold cathode display clock with a subtle reflection of a beautiful view in Spain: el Mirador de San Nicolás. The reflection shows the current position of the moon and the sun in the place where the picture was taken.
+A cold cathode display clock with a subtle reflection of a beautiful view in Spain: el Mirador de San Nicolás. The reflection shows the current position of the moon and the sun in the place where the picture of the view was taken.
 
 ![long demo](docs/long.gif)
 
@@ -9,7 +9,7 @@ A cold cathode display clock with a subtle reflection of a beautiful view in Spa
 
 The clock face shows a perspective view that allows to observe the content of the tube displays: a set of stacked digits made with a thin tube filled with gas that glows when voltage is applied. The stacked digits are surrounded with a metallic hexagonal grid.
 
-The glass tube shows a subtle reflection of a window to the [Mirador de San Nicolas](https://www.google.com/maps/place/Calle+Mirador+de+San+Nicol%C3%A1s,+18010+Granada/@37.1810461,-3.5924338,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPlkwj821uUKclf2Sjs_RYrPY6mqYQlN7wSSHdB!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPlkwj821uUKclf2Sjs_RYrPY6mqYQlN7wSSHdB%3Dw203-h135-k-no!7i3613!8i2418!4m5!3m4!1s0xd71fcc7c961238b:0xe0cb79755e1ffe96!8m2!3d37.1812123!4d-3.5924667). This is one of the most iconic viewpoints in my hometown, Granada (Spain), which offers its visitors a fantastic view to the two most emblematic symbols of this beautiful town: the Alhambra, a wonderful muslim castle, and the Veleta, the second highest peak in the mountain range of Sierra Nevada. Former U.S. President [Bill Clinton](https://en.wikipedia.org/wiki/Bill_Clinton) once coined it _“the most breathtaking sunset in the world"_.
+The glass tube shows a subtle reflection of a window to the [Mirador de San Nicolas](https://www.google.com/maps/place/Calle+Mirador+de+San+Nicol%C3%A1s,+18010+Granada/@37.1810461,-3.5924338,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPlkwj821uUKclf2Sjs_RYrPY6mqYQlN7wSSHdB!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPlkwj821uUKclf2Sjs_RYrPY6mqYQlN7wSSHdB%3Dw203-h135-k-no!7i3613!8i2418!4m5!3m4!1s0xd71fcc7c961238b:0xe0cb79755e1ffe96!8m2!3d37.1812123!4d-3.5924667). This is one of the most iconic viewpoints in my hometown, Granada (Spain), which offers its visitors a fantastic view to the two most emblematic symbols of this beautiful town: the Alhambra, a wonderful palace and fortress complex, and the Veleta, the second highest peak in the mountain range of Sierra Nevada. Former U.S. President [Bill Clinton](https://en.wikipedia.org/wiki/Bill_Clinton) once coined it _“the most breathtaking sunset in the world"_.
 
 ![Mirador de San Nicolás](sunset_reflections_clock/assets/day.jpg)
 
@@ -17,7 +17,7 @@ The glass tube shows a subtle reflection of a window to the [Mirador de San Nico
 
 ### 3D rendering
 
-One of the most challenging parts during the development of this clock was achieving a realistic representation of the glass tubes. Somehow, I ended up developing a basic 3D rendering engine, able to represent triangle meshes (the glass tube, the tube stand and the table) and canvas paths (the grid and the digits) according to the position of a virtual camera (see [lib/basic3d](sunset_reflections_clock/lib/basic3d)).
+One of the most challenging parts during the development of this clock was achieving a realistic effect for the glass tubes. Somehow, I ended up developing a basic 3D rendering engine, able to represent triangle meshes (the glass tube, the tube stand and the table) and canvas paths (the grid and the digits) according to the position of a virtual camera (see [lib/basic3d](sunset_reflections_clock/lib/basic3d)).
 
 Triangle meshes have been created with openScad (see [docs/tube.scad](docs/tube.scad)) and exported to [STL format](https://en.wikipedia.org/wiki/STL_(file_format)) (see [assets/3d](sunset_reflections_clock/assets/3d)). A binary STL parser has been implemented.
 
@@ -41,18 +41,18 @@ The clock includes both light and dark themes. In fact, it is prepared to includ
 
 The sun and the moon appear in the reflection depending on the time and day. I've chosen to paint them using unrealistic big proportions for a more artistic effect, but their positions are indeed computed according to their real locations in real time at the place where the pictures were taken. This is done with the help of [flutter_suncalc](https://pub.dev/packages/flutter_suncalc). The [celestial coordinates](https://en.wikipedia.org/wiki/Celestial_coordinate_system) are then mapped to the picture provided a reference line of the horizon, the azimuth and the east and west of the [ecliptic](https://en.wikipedia.org/wiki/Ecliptic). This information is included in a json asset file (see [desc.json](sunset_reflections_clock/assets/sights/san_nicolas/desc.json)) in order to include other pictures in the future.
 
-I did not consider the possibility of using the geo-position of the clock itself, since it seems that Lenovo Smart Clock does not have a GPS included and network calls were not allowed according to contest rules.
+I did not consider the possibility of using the geo-position of the clock itself, since it seems that Lenovo Smart Clocks do not have a GPS and network calls were not allowed according to contest rules.
 
 ![a full moon](docs/full_moon.png)
 
-The phase of the moon is computed and displayed as well. This is again possible thanks to [flutter_suncalc](https://pub.dev/packages/flutter_suncalc), a port of [suncalc](https://github.com/mourner/suncalc) to Dart:
+The phase of the moon is computed and displayed as well. This is again possible thanks to [flutter_suncalc](https://pub.dev/packages/flutter_suncalc), a port of [suncalc](https://github.com/mourner/suncalc) to Dart.
 
 ![a sunrise](docs/sunrise.png)
 ![a crescent moon](docs/crescent_moon.png)
 
-I have included a **test mode** that splits the screen into two columns and enables going back and forth in time using swipe gestures. _This feature has been included merely to show the operation of the clock. I'm aware is not be considered in the evaluation of the work presented._ To use it, just modify the value of the boolean constant `testMode` in [lib/main.dart](sunset_reflections_clock/lib/main.dart).
+I have included a **test mode** that splits the screen into two parts showing the clock and the sight, and enables going back and forth in time using swipe gestures. _This feature has been included merely to show the operation of the clock. I'm aware it is something not to be considered in the evaluation of the work presented._ To use it, just modify the value of the boolean constant `testMode` in [lib/main.dart](sunset_reflections_clock/lib/main.dart).
 
-In addition to this, the class [ChangeNotifierProvider](sunset_reflections_clock/lib/time_notifier.dart), which takes care of notifying widgets of time changes, includes an optional parameter to make time run faster. During the tests I used to have the time running 1 minute every other second. For this, just change the value of the constant `timesFaster` in the file (libs/main.dart).
+The class [ChangeNotifierProvider](sunset_reflections_clock/lib/time_notifier.dart), which takes care of notifying widgets of time changes, includes an optional parameter to make time run faster. During the tests I used to have the time running 1 minute every other second. For this, just change the value of the constant `timesFaster` (for instance, to 30) in the file (libs/main.dart).
 
 
 ### The sky and the city lights
@@ -82,7 +82,7 @@ The clock is prepared to enable some additional customizations (see [lib/themes.
 
 ### Performance
 
-This was challenging indeed! I've managed to keep GPU + UI time around 16/17-ish ms per frame (during the animation of the cathodes) with the exception of some puntual peaks. These peaks are caused by the refresh of the reflection image. For this reason, this action is delayed to happen a few seconds after a change of minute / hour. This way, it does not interfere with the animation.
+This was challenging indeed! I've managed to keep GPU + UI time around 16/17-ish ms per frame (during the animation of the cathodes turning on and off) with the exception of some puntual peaks. These peaks are caused by the refreshing of the reflection image. For this reason, this action is delayed to happen a few seconds after a change of minute / hour. This way, it does not interfere with the animation of the cathodes and everything runs smoothly.
 
 ![performance](docs/performance.png)
 
@@ -101,11 +101,19 @@ For sure! That was not hard.
 
 All the source code and assets have been written by the author and are released under the [APACHE 2.0 license](LICENSE) with the exception of:
 
--   The image of the moon ([full-moon.png](assets/sights/san_nicolas/full-moon.png)) is the fantastic picture by [Luc Viatour](https://Lucnix.be), downloaded from [https://commons.wikimedia.org/wiki/File:Lune_ico.png](https://commons.wikimedia.org/wiki/File:Lune_ico.png) and is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en) license. No modifications have been done to the original file.
+-   The image of the moon ([full-moon.png](sunset_reflections_clock/assets/sights/san_nicolas/full-moon.png)) is the fantastic picture by [Luc Viatour](https://Lucnix.be), downloaded from [https://commons.wikimedia.org/wiki/File:Lune_ico.png](https://commons.wikimedia.org/wiki/File:Lune_ico.png) and is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en) license. No modifications have been done to the original file.
 
 -   All the textures under [assets/textures](assets/textures) have been downloaded from the awesome [https://cc0textures.com/](https://cc0textures.com/) and are licensed under the [Creative Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en) license.
 
--   The code under [flutter_clock_helper](flutter_clock_helper/), which are the two helper classes provided for the contest with a minor modification to show the test mode.
+-   The code under [flutter_clock_helper](flutter_clock_helper/), which are the two helper classes provided for the contest by the Flutter team.
+
+
+## Building instructions
+```bash
+cd sunset_reflections_clock
+flutter create .
+flutter run
+```
 
 ## Future improvements
 
@@ -116,3 +124,4 @@ This was my very first project using Flutter and Dart. It was a lot of fun but t
 -   Shadows and better lightning.
 -   UV Maps, reflection maps and some more advanced texture techniques could be implemented. Possibly adding the capability of importing some more advanced formats like [OBJ](https://en.wikipedia.org/wiki/Wavefront_.obj_file) so that the hard part of the rendering could be done in external tools like [Blender](<https://en.wikipedia.org/wiki/Blender_(software)>).
 -   Code cleaning and reorganization. Indeed, the code needs documentation and it could use a good reorganization. I have started the reengineering of the 3D engine but did not make it on time for the contest.
+-   A windows with a view : a friend of mine recenctly asked me to display the view as a window behind the clock. I wanted to keep the display simple so I wanted the reflection to be just a subtle detail, despite all the efforts invested in displaying the sun, the moon and light conditions. However, this might become an option in the future.
