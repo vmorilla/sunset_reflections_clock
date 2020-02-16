@@ -58,7 +58,9 @@ The class [ChangeNotifierProvider](sunset_reflections_clock/lib/time_notifier.da
 
 The sky illumination and its colors depend on the position of the sun, providing a fluent transition between night, day, sunrise and sunsets.
 
-The illumination of the city and the [Alhambra](https://en.wikipedia.org/wiki/Alhambra), the fortress that can be seen in the view, is the result of the combination of two pictures taken from the exact same place at day and night, where they sky has been removed to be replaced by canvas gradients (see the gimp file [san-nicolas.xcf](docs/san-nicolas.xcf) and the file [sight.dart](sunset_reflections_clock/lib/clock_parts/sight.dart)).
+The illumination of the city and the [Alhambra](https://en.wikipedia.org/wiki/Alhambra), the fortress that can be seen in the view, is the result of the combination of two pictures taken from the same spot at day and night, where they sky has been removed to be replaced by canvas gradients (see the gimp file [san-nicolas.xcf](docs/san-nicolas.xcf) and the file [sight.dart](sunset_reflections_clock/lib/clock_parts/sight.dart)).
+
+![city lights](docs/sunset.gif)
 
 ### Accessibility and internationalization
 
