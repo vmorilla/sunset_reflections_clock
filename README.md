@@ -79,7 +79,10 @@ The clock is prepared to enable some additional customizations (see [lib/themes.
 -   The materials of the table and tubes stands
 -   The position of the camera
 -   ...
-    ![Camera focus at ](docs/extreme_perspective.png)
+
+
+The following picture shows an eccentric perspective and a very straight one for light and dark theme respectively:
+![Different perspectives](docs/perspectives.gif)
 
 ### Performance
 
@@ -92,7 +95,9 @@ Performance tests have been done on an IPhone 6.
 
 ### Flickering cathodes
 
-The material used in the making of this clock is old technology. For this reason, the illuminated digits flicker. Don't worry, they are still completely reliable 😀.
+The material used in the making of this clock is old technology. For this reason, the illuminated digits flicker occasioanlly. Don't worry, they are still completely reliable 😀.
+
+Cathodes turning on and off use an ease-in cubic animation to achieve a realistic effect. But randomly, the standard animation is replaced by a flickering effect. The effect is hardly noticeable in the animated images, but it can be seen very clearly when running the application on an actual device.
 
 ### 12-hour / 24-hour format
 
