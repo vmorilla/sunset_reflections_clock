@@ -1,7 +1,9 @@
 # Sunset Reflections Clock
-A cold cathode display clock with a subtle reflection of a beautiful view in Spain: el Mirador de San Nicolás. The reflection shows the current position of the moon and the sun in the place where the picture of the view was taken.
+My submission to the [Flutter Clock Challenge](https://flutter.dev/clock), awarded with the **Novelty of Idea** prize: a cold cathode display clock (aka nixie clock) with a subtle reflection of a beautiful view in Spain: el Mirador de San Nicolás. The reflection shows the current position of the moon and the sun in the place where the picture of the view was taken.
 
 ![long demo](docs/long.gif)
+
+A [high quality version](https://www.youtube.com/watch?v=fLWATe8NSic) of this video can be seen on YouTube.
 
 ## Description
 
